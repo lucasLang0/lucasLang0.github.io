@@ -41,6 +41,7 @@
 
     <section id="xkcd-section">
         <div id="xkcd-container">
+            <!-- <a href="#" class="cta-button" id="xkcdBtn">Load Random xkcd Comic</a> -->
             <button onclick="loadRandomXkcd()">Load Random xkcd Comic</button>
         </div>
     </section>
@@ -51,6 +52,21 @@
         </div>
     </section>
 
+    <section id="snake-section">
+        <h2>Snake Game</h2>
+        <div id="snake-game-container">
+            <div id="snake-controls">
+                <button onclick="startSnakeGame()" id="startBtn">Start Game</button>
+                <button onclick="pauseSnakeGame()" id="pauseBtn" disabled>Pause</button>
+                <button onclick="resetSnakeGame()" id="resetBtn">Reset</button>
+            </div>
+            <div id="snake-score">Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div id="game-instructions">
+                <p>Use arrow keys or WASD to control the snake</p>
+            </div>
+        </div>
+    </section>
 
 
 
