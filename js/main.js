@@ -225,9 +225,9 @@ function drawGame() {
     ctx.fillStyle = '#1e3a8a';
     snake.forEach((segment, index) => {
         if (index === 0) {
-            ctx.fillStyle = '#1d4ed8'; // Lighter color for head
+            ctx.fillStyle = '#1e3a8a'; // Lighter color for head
         } else {
-            ctx.fillStyle = '#1e3a8a';
+            ctx.fillStyle = '#1d4ed8';
         }
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
     });
