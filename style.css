@@ -50,9 +50,22 @@ html {
     color: var(--text);
 }
 
-body {
+/* body {
     padding: lem;
     background-color: var(--background)
+} */
+
+body {
+    padding: lem;
+    background-color: var(--background);
+    border-left: 6px solid;
+    border-image: linear-gradient(to bottom, 
+        var(--primary-900) 0%, 
+        var(--primary-800) 25%, 
+        var(--primary-700) 50%, 
+        var(--primary-600) 75%, 
+        var(--primary-500) 100%) 1;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -79,10 +92,12 @@ nav li:first-child {
 nav a{
     text-decoration: none;
     color: var(--text);
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     text-decoration: underline;
+    color: var(--primary-600);
 }
 
 header, section {
@@ -91,6 +106,10 @@ header, section {
     background-color: var(--color-1);
     padding: min(2em, 15%);
     border-radius: 1em;
+}
+
+header:hover, section:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .flex-container {
@@ -131,6 +150,17 @@ h1 {
     padding: .75em 1.25em;
     border-radius: .5em;
     font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-700);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.cta-button:active {
+    transform: scale(0.98);
 }
 
 .secondary {
@@ -165,4 +195,5 @@ h1 {
     cursor: pointer;
     color: var(--primary-900);
 }
+
 
