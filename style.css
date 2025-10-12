@@ -37,6 +37,10 @@
   --text-muted: #6b7280;
   --border: #e5e7eb;
   --shadow: rgba(0, 0, 0, 0.1);
+
+  /* border */
+  --border-size: 10px;
+
 }
 
 *{
@@ -48,8 +52,8 @@
 html {
     font-family: Courier;
     color: var(--text);
-    /* margin: 0;  
-    padding: 0; */
+    margin: 0;  
+    padding: 0;
 }
 
 /* body {
@@ -58,10 +62,15 @@ html {
 } */
 
 body {
+    
     margin: 0;
     padding: 1em;
     background-color: var(--background);
-    border-left: 6px solid;
+    /* I might just want to leave left border, 6px looked good */
+    border-left: var(--border-size) solid;
+    border-top: var(--border-size) solid;
+    border-bottom: var(--border-size) solid;
+    border-right: var(--border-size) solid;
     border-image: linear-gradient(to bottom, 
         var(--primary-900) 0%, 
         var(--primary-800) 25%, 
@@ -69,6 +78,8 @@ body {
         var(--primary-600) 75%, 
         var(--primary-500) 100%) 1;
     min-height: 100vh;
+    
+    /* border-image-slice: 1; */
 }
 
 h1, h2, h3 {
@@ -77,7 +88,8 @@ h1, h2, h3 {
 }
 
 nav {
-    margin: lem auto 3em auto;
+    margin: -2em auto 3em auto;
+    /* margin: 1em auto 3em auto; */
     width: min(1000px, 100%);
 }
 
@@ -104,7 +116,7 @@ nav a:hover {
 }
 
 header, section {
-    margin: 2em auto;
+    margin: 0 auto 2em auto;
     width: min(75em, 100%);
     background-color: var(--color-1);
     padding: min(2em, 15%);
