@@ -416,9 +416,32 @@ document.addEventListener('keydown', (e) => {
             e.preventDefault();
             break;
     }
-    
-    // Player 2 controls: WASD keys (only in two player mode)
-    if (isTwoPlayerMode) {
+    if (!isTwoPlayerMode) {
+        // Single player - WASD controls Player 1
+        switch(e.key) {
+            case 'w':
+            case 'W':
+                if (dy !== 1) { dx = 0; dy = -1; }
+                e.preventDefault();
+                break;
+            case 's':
+            case 'S':
+                if (dy !== -1) { dx = 0; dy = 1; }
+                e.preventDefault();
+                break;
+            case 'a':
+            case 'A':
+                if (dx !== 1) { dx = -1; dy = 0; }
+                e.preventDefault();
+                break;
+            case 'd':
+            case 'D':
+                if (dx !== -1) { dx = 1; dy = 0; }
+                e.preventDefault();
+                break;
+        }
+    } else {
+        // Two player mode - WASD controls Player 2
         switch(e.key) {
             case 'w':
             case 'W':
@@ -442,6 +465,7 @@ document.addEventListener('keydown', (e) => {
                 break;
         }
     }
+    
 });
 
 // Initialize game display
